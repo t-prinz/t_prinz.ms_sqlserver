@@ -17,7 +17,7 @@
     - name: Create configuration file from template
       ansible.windows.win_template:
         dest: "{{ sqlsvr_configfile_folder }}{{ sqlsvr_configfile_name }}"
-        newline_sequence: \n
+        newline_sequence: \r
         src: ConfigurationFile.ini.j2
 
     - name: Ensure MS SQL Server ISO is mounted
