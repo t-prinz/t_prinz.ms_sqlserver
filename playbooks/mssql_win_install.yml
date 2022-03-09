@@ -32,7 +32,7 @@
           - "/ConfigurationFile={{ sqlsvr_configfile_folder }}{{ sqlsvr_configfile_name }}"
         path: '{{ disk_image_out.mount_paths[0] }}\setup.exe'
         state: present
-        wait_for_children: true
+#        wait_for_children: true
       register: installer_out
 
     - name: Print all output
