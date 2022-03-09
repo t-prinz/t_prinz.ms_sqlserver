@@ -7,6 +7,7 @@
     sqlsvr_configfile: "~/Documents/Downloads/MS-SQL-Server/ConfigurationFile.ini"
     sqlsvr_configfile_folder: C:\Users\Administrator\Downloads\
     sqlsvr_configfile_name: ConfigurationFile.ini
+    sqlsvr_service: MSSQLSERVER
   tasks:
 
 #    - name: Copy over configuration file
@@ -30,6 +31,7 @@
       ansible.windows.win_package:
         arguments:
           - "/ConfigurationFile={{ sqlsvr_configfile_folder }}{{ sqlsvr_configfile_name }}"
+        creates_service: "{{ sqlsvr_service }}"
         path: '{{ disk_image_out.mount_paths[0] }}\setup.exe'
         state: present
 #        wait_for_children: true
