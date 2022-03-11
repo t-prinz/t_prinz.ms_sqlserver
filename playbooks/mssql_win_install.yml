@@ -4,7 +4,6 @@
   vars:
     sqlsvr_iso_folder: C:\Users\Administrator\Downloads\
     sqlsvr_iso_name: SQLServer2019-x64-ENU.iso
-    sqlsvr_configfile: "~/Documents/Downloads/MS-SQL-Server/ConfigurationFile.ini"
     sqlsvr_configfile_folder: C:\Users\Administrator\Downloads\
     sqlsvr_configfile_name: ConfigurationFile.ini
     sqlsvr_service: MSSQLSERVER
