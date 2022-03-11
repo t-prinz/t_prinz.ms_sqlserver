@@ -10,11 +10,6 @@
     sqlsvr_service: MSSQLSERVER
   tasks:
 
-#    - name: Copy over configuration file
-#      ansible.windows.win_copy:
-#        dest: "{{ sqlsvr_configfile_folder }}{{ sqlsvr_configfile_name }}"
-#        src: "{{ sqlsvr_configfile }}"
-
     - name: Create configuration file from template
       ansible.windows.win_template:
         dest: "{{ sqlsvr_configfile_folder }}{{ sqlsvr_configfile_name }}"
@@ -34,7 +29,6 @@
         creates_service: "{{ sqlsvr_service }}"
         path: '{{ disk_image_out.mount_paths[0] }}\setup.exe'
         state: present
-#        wait_for_children: true
       register: installer_out
 
     - name: Print all output
